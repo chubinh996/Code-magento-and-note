@@ -1,8 +1,7 @@
 <?php 
 $categoryId = $this->getData('category_id');
 $_objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-$category  = $_objectManager->create('Magento\Catalog\Model\Category')
-->load($categoryId);
+$category  = $_objectManager->create('Magento\Catalog\Model\Category')->load($categoryId);
 $RdscHelper = $this->helper('RDSC\Custom\Helper\Data');
 $categoryProducts = $category->getProductCollection()->addAttributeToSelect('*');
 $_imagehelper = $this->helper('Magento\Catalog\Helper\Image');
