@@ -1,0 +1,20 @@
+<div id="recaptcha_element_contacts"></div>
+
+<script type="text/javascript">
+	var onloadCallback = function() {
+		grecaptcha.render('recaptcha_element_contacts', {
+			'sitekey' : '6LePG20UAAAAAK_70_6shm6cRqVA6xzXOmzNt6nj'
+		});       
+	}; 
+	window.onload = function() { 
+		jQuery( '#btn-contacts').click(function(){
+			var response = grecaptcha.getResponse();
+			if (response.length === 0){
+				alert('Please complete the reCAPTCHA!');
+				return false;
+			}else {
+				jQuery('#btn-contacts').submit();
+			}
+		});
+	};
+</script>
